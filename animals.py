@@ -6,10 +6,10 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Model
 import cv2
 
-train_X = ''
+train_X = []
 
 for i in path_train:
-    train_X = cv2.imread(i)
+    train_X.append(cv2.imread(i))
 print(type(train_X))
 
 
