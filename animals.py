@@ -10,13 +10,9 @@ import csv
 
 class Animals_clisfier:
     def __init__(self,f_name):
-        paths = []
         with open(f_name,'r') as f:
             csv_r = csv.reader(f)
-            for i in csv_r:
-                paths.append(i)
-        print(paths)
-
+            paths = [i for i in csv_r if len(i) > 0]
 
 a_cls = Animals_clisfier("train.csv")
 
