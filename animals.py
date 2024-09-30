@@ -4,14 +4,20 @@ from tensorflow.keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D,
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Model
+
 import cv2
+import csv
 
-train_X = []
+class Animals_clisfier:
+    def __init__(self,f_name):
+        paths = []
+        with open(f_name,'r') as f:
+            csv_r = csv.reader(f)
+            for i in csv_r:
+                paths.append(i)
+        print(paths)
 
-for i in path_train:
-    train_X.append(cv2.imread(i))
-print(type(train_X))
 
-
+a_cls = Animals_clisfier("train.csv")
 
 
