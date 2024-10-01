@@ -13,12 +13,10 @@ class Animals_clisfier:
         with open(f_train,'r') as f:
             csv_r = csv.reader(f)
             trn_r = [i for i in csv_r if len(i) > 0]
-        self._trainX, self._trainY = [cv2.imread(i[0]) for i in trn_r],[i[1] for i in trn_r]
-        with open(f_test,'r') as f:
-            tst_r = f.readlines()
-        self._trainY = [cv2.imread(i[0]) for i in tst_r]
-        print(self._trainY[0])
+        self._trainX, self._trainY = [cv2.imread(i[0]) for i in trn_r],[i[1] for i in trn_r] # divide the train elements for test and train
+        print(f"train dataset lenght: {len(self._trainX)}")
+
+    def create_model(self):
+        pass
 
 a_cls = Animals_clisfier("train.csv","test.txt")
-
-
