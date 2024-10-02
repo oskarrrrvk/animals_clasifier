@@ -6,17 +6,21 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Model
 
 import cv2
-import csv
+import pandas as pd
+from sklearn.model_selection import train_test_split
 
 class Animals_clisfier:
-    def __init__(self,f_train,f_test):
-        with open(f_train,'r') as f:
-            csv_r = csv.reader(f)
-            trn_r = [i for i in csv_r if len(i) > 0]
-        self._trainX, self._trainY = [cv2.imread(i[0]) for i in trn_r],[i[1] for i in trn_r] # divide the train elements for test and train
-        print(f"train dataset lenght: {len(self._trainX)}")
+    def __init__(self,f_train):
+        f = pd.read_csv(f_train)
+
+        x = f.drop('tags',axis=1)
+        y = f['tags']
+
+        self._train_X,self._test_X,self._train_Y,self._test_Y= train_test_split(x,y,test_size=0.2,random_state=42)
+        print(f"train set's size: {self._train_X.shape[0]}")
+        print(f"test set's size: {self._test_X.shape[0]}")
 
     def create_model(self):
         pass
 
-a_cls = Animals_clisfier("train.csv","test.txt")
+a_cls = Animals_clisfier("dataset.csv")

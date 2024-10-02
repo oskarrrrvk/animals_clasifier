@@ -1,5 +1,5 @@
 import os 
-import csv
+import pandas as pd
 
 def take_images(directory ='.'):
     paths = []
@@ -16,29 +16,17 @@ def take_tags(paths):
         tags.append(aux[3])
     return tags
 
-def mix_data(data_1,data_2):
-    result =[]
-    if len(data_1) == len(data_2):
-        length = len(data_1)
-        for i in range(length):
-            result.append([data_1[i],data_2[i]])
-    return result
+def save_dataset(train:list,tags:list):
+    f = pd.DataFrame({'image':train,'tags':tags})
+    f.to_csv('dataset.csv',index=False)
 
-
-def save_file(elements:list,name:str):
-    with open(name,'w')as f:
-        if '.csv' in name:
-            writer = csv.writer(f)
-            writer.writerows(elements)
-        else:
-            for element in elements:
-                f.write(element+'\n')
+def save_test(elements:list,name:str):
+    with open(name,'w') as f:
+        f.writelines(elements)
 
 path_train = take_images('.\\mg-animal-prediction-24-25\\train_images')
 path_test = take_images('.\\mg-animal-prediction-24-25\\test_images')
 tags = take_tags(path_train)
 
-mix = mix_data(path_train,tags)
-
-save_file(mix,"train.csv")
-save_file(path_test,"test.txt")
+save_dataset(path_train,tags)
+save_test(path_test,"test.txt")
