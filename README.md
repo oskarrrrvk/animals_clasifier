@@ -1,6 +1,6 @@
 # animal clasifier
 
-This project is a neural network that clasify different types of animals wich are extracted from a dataset.
+This project is a neural network that clasify different types of animals which are extracted from a dataset.
 
 ![](https://t4.ftcdn.net/jpg/01/58/67/89/360_F_158678954_qjmDZePFwUQvbWDXvsbkFXbgPVWsJRs0.jpg)
 

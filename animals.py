@@ -19,8 +19,15 @@ class Animals_clisfier:
         self._train_X,self._test_X,self._train_Y,self._test_Y= train_test_split(x,y,test_size=0.2,random_state=42)
         print(f"train set's size: {self._train_X.shape[0]}")
         print(f"test set's size: {self._test_X.shape[0]}")
+        print(f"train: {type(self._train_X.shape)}")
+
 
     def create_model(self):
-        pass
+        input = Input(shape=())
+        x = Conv2D(2,(3,3),activation='')(input)
+        x = MaxPooling2D((2,2))(x)
+        x = Flatten()(x)
+        output = Dense(10,activation='')(x)
+        self._model = Model(input,output)
 
 a_cls = Animals_clisfier("dataset.csv")
