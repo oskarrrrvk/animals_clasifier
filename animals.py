@@ -28,7 +28,6 @@ class Animals_clisfier:
         
         print(f"train length: {len(self._train_X),self._train_Y.shape}")
         print(f"test lenght: {len(self._test_X),self._test_Y.shape}")
-        
 
     def _open_img(self,x):
         result = []
@@ -37,11 +36,7 @@ class Animals_clisfier:
             img = img.resize((128,128))
             if img.mode != 'RGB':
                 img = img.convert('RGB')
-            img = np.array(img)
-            img= img.astype(np.float16)
-            img = img/255.0
-            if img.ndim == 2:
-                img = np.expand_dims(img,axis=-1)
+            img = np.array(img).astype(np.float16) / 255.0
             result.append(img)
         return np.array(result)
 
