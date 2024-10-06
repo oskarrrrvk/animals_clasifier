@@ -49,21 +49,20 @@ class Animals_clisfier:
         x = MaxPooling2D((2,2))(x)
         x = Conv2D(8,(3,3),activation='ReLU')(x)
         x = MaxPooling2D((2,2))(x)
-        x = Conv2D(16,(3,3),activation='sigmoid')(x)
+        x = Conv2D(16,(3,3),activation='ReLU')(x)
         x = MaxPooling2D((2,2))(x)
 
         x = Flatten()(x)
 
-        x = Dense(16,activation='ReLU')(x)
+        x = Dense(10,activation='ReLU')(x)
         x = Dense(8,activation='ReLU')(x)
-        x = Dense(4,activation='ReLU')(x)
         output = Dense(10,activation='softmax')(x)
 
         self._model = Model(input,output)
     
     def execute_model(self):
         self._model.compile(loss='categorical_crossentropy',optimizer='Adam',metrics=['accuracy'])
-        self._history = self._model.fit(self._train_X,self._train_Y,validation_split=0.2,batch_size=64,epochs=20,validation_data=(self._test_X,self._test_Y))#more epochs
+        self._history = self._model.fit(self._train_X,self._train_Y,validation_split=0.2,batch_size=64,epochs=20,validation_data=(self._test_X,self._test_Y))
     
     def show_plot_losses(self):
         plt.rcParams['figure.figsize'] = [20, 5]
