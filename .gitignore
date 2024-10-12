@@ -1,6 +1,12 @@
 __pycache__
-mg-animal-prediction-24-25
-test.txt
-dataset.csv
+
 mg-animal-prediction-24-25
 mg-animal-prediction-24-25.zip
+
+test.txt
+dataset.csv
+
+animals_clasifier.aux
+animals_clasifier.log
+animals_clasifier.toc
+animals_clasifier.out

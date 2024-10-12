@@ -1,6 +1,9 @@
 # animal clasifier
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9ea23a387ca89c509acdf732de882e6c17487d4
 ![](https://t4.ftcdn.net/jpg/01/58/67/89/360_F_158678954_qjmDZePFwUQvbWDXvsbkFXbgPVWsJRs0.jpg)
 
 [MG: Animal prediction 24/25](https://www.kaggle.com/competitions/mg-animal-prediction-24-25)
