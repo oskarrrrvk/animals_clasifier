@@ -8,3 +8,4 @@ IF NOT EXIST .\build (
 move *.aux .\build
 move *.log .\build
 move *.toc .\build
+move *.out .\build

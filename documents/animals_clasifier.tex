@@ -3,6 +3,7 @@
 \usepackage[a4paper,total={18cm,25cm}]{geometry}
 \usepackage[spanish]{babel}
 
+\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{makeidx}
 
@@ -28,17 +29,30 @@
 
     \newpage
 
-    \title{Contexto}\\
+    \section{Contexto}
 
-    Animals clasifier es una IA creada para distinguir distintas especies de animales, entre ellos están: Perros,caballos, elenfantes, mariposas,
-    gallinas, gatos,vacas, ovejas, arañas y ardillas.\\
-    \begin{figure}
+    Animals clasifier es una IA creada para distinguir distintas especies de animales, entre ellos están: Perros,caballos, elenfantes, mariposas, 
+    gallinas, gatos,vacas, ovejas, arañas y ardillas.\newline
+    
+    \begin{figure}[h]
         \centering
         \includegraphics{dataset_images.png}
+        \caption{Imágen del conjunto de imágenes¡}
     \end{figure}
-    Para entrenar esta neurona hemos escogido un dataset perteneciente a un concurso de kaggel llamado "mg-animal-prediction-24-25", creado este dataset
-    como reto educativo para la asignatura de métodos generativos, como introducción al entrenamiento de redes de neuronas densas y convolucionales.
-    Cabe añadir, con motivo de aprendizaje, este documento se redacta en latex como primer contacto para proyectos posteriores, por su versatilidad
-    a la hora de diseñar la estructura de la documentación de manera mas flexible. 
+
+    Para entrenar esta neurona hemos escogido un dataset perteneciente a un concurso de kaggel llamado \href{https://www.kaggle.com/competitions/mg-animal-prediction-24-25}{mg-animal-prediction-24-25}. 
+    Este dataset ha sido creado como reto educativo para la asignatura de métodos generativos, como introducción al entrenamiento de redes de neuronas 
+    densas y convolucionales.Cabe añadir, con motivo de aprendizaje, este documento se redacta en latex como primer contacto para proyectos posteriores,
+    por su versatilidad a la hora de diseñar la estructura de la documentación de manera mas flexible.
+    
+    \begin{figure}[h]
+        \includegraphics[width=10cm]{Kaggle_logo.png}
+        \centering
+        \caption{\href{https://www.kaggle.com}{Imágen logotipo kaggle}}
+    \end{figure}
+
+    \newpage
+
+    \section{Arquitectura}
 
 \end{document}
